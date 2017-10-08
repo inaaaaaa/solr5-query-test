@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<solr>
+  <str name="shareSchema">${shareSchema:false}</str>
+  <str name="configSetBaseDir">${configSetBaseDir:configsets}</str>
+  <str name="coreRootDirectory">${coreRootDirectory:.}</str>
+  <solrcloud>
+    <str name="host">127.0.0.1</str>
+    <int name="hostPort">8983</int>
+    <str name="hostContext">${hostContext:solr}</str>
+    <bool name="genericCoreNodeNames">${genericCoreNodeNames:true}</bool>
+    <int name="zkClientTimeout">${solr.zkclienttimeout:30000}</int>
+    <int name="distribUpdateSoTimeout">${distribUpdateSoTimeout:340000}</int>
+    <int name="distribUpdateConnTimeout">${distribUpdateConnTimeout:45000}</int>
+    <str name="zkCredentialsProvider">${zkCredentialsProvider:org.apache.solr.common.cloud.DefaultZkCredentialsProvider}</str>
+    <str name="zkACLProvider">${zkACLProvider:org.apache.solr.common.cloud.DefaultZkACLProvider}</str>
+  </solrcloud>
+  <shardHandlerFactory name="shardHandlerFactory" class="HttpShardHandlerFactory">
+    <int name="socketTimeout">${socketTimeout:90000}</int>
+    <int name="connTimeout">${connTimeout:15000}</int>
+  </shardHandlerFactory>
+</solr>
