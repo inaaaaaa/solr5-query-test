@@ -1,0 +1,1 @@
+# solr5-query-test
